@@ -202,8 +202,8 @@ def fbxExportToSpa(path, fbxScene, importer):
         lFilter.SetQualityTolerance(0.25)
         lFilter.Apply(animStack)
 
-        if spaName != 'Default.spa':
-            takeInfo = importer.GetTakeInfo(i - 1)
+        if spaName != 'Default.spa':           
+            takeInfo = importer.GetTakeInfo(i)
             timeMode = fbx.FbxTime.GetGlobalTimeMode()
             start = takeInfo.mLocalTimeSpan.GetStart()
             startFrame = start.GetFrameCount(timeMode)
@@ -226,14 +226,14 @@ def fbxExportToSpa(path, fbxScene, importer):
 
     for spaName in animData:
         if spaName != 'Default.spa':
-            animData[spaName] = cleanData(animData['Default.spa'], animData[spaName], spaName)
+            animData[spaName] = cleanData(animData['Default.spa'], animData[spaName])
             spaObject = SPA(spaName)
             stream = open(f'{path}/{spaName}', "wb")
             spaObject.load(animData[spaName], frameCounts[spaName])
             spaObject.write(stream)
 
 # Remove position and rotation offsets from the default pose + cleaning redundant frames
-def cleanData(offsetData, data, animName):
+def cleanData(offsetData, data):
     for boneName in data:
         for frame in list(data[boneName].keys()):
             if 'translation' in data[boneName][frame]:
@@ -249,7 +249,7 @@ def cleanData(offsetData, data, animName):
                 if data[boneName][frame]['rotation'] == (0,0,0):
                     del data[boneName][frame]['rotation']
             if data[boneName][frame] == {}:
-                del data[boneName][frame]
+               del data[boneName][frame]
     return data
 
 def getNodeAnimationData(animData, node, animLayer):
