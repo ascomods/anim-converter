@@ -216,6 +216,3 @@ class SPA:
     
     def getRotation(self, data):
         return (float(data + 90) / 90) * 0x7ffff
-    
-    def printHex(self, data):
-        print(''.join(r' '+hex(letter)[2:] for letter in data))

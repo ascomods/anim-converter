@@ -111,3 +111,6 @@ def natural_keys(text):
     (See Toothy's implementation in the comments)
     '''
     return [ atoi(c) for c in re.split(r'(\d+)', text) ]
+
+def printHex(self, data):
+    print(''.join(r' '+hex(letter)[2:] for letter in data))
