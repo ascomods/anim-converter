@@ -1,5 +1,4 @@
 import fbx
-import fbxsip
 from core.SPA import SPA
 from core.ANM import ANM
 import os, sys, glob
