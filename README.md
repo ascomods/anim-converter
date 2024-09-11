@@ -67,7 +67,7 @@ anim_converter.exe --to=spa input.fbx output_folder
 
 `output_folder`: Folder path where output SPA files will be exported
 
-For a full example, check the [Tutorial](#tutorial).
+For full examples, check [Tutorials](#tutorials).
 
 ## Run from source
 
@@ -120,9 +120,15 @@ python app.py
 
 You can use the same commands as described [before](#usage).
 
-## Tutorial
+## Tutorials
 
-Here is an example showing how to use the tool to export, modify then import back animations into DragonBall Z Budokai Tenkaichi 3.
+Here are 2 examples showing how to use the tool to export, modify then import back animations into the game.
+
+### Raging Blast Games
+
+Check out the video tutorial [here](https://www.youtube.com/watch?v=Zty0vS8h_78).
+
+### DragonBall Z Budokai Tenkaichi 3
 
 Requirements:
 * [Animation Converter](https://github.com/ascomods/anim-converter/releases)
